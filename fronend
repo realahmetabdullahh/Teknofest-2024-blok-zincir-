@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurye Uygulaması</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        header {
+            background-color: #1e90ff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .delivery, .qr-code {
+            background-color: #fff;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .delivery h2, .qr-code h2 {
+            color: #1e90ff;
+        }
+
+        button {
+            background-color: #1e90ff;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #007acc;
+        }
+
+        footer {
+            background-color: #1e90ff;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Kurye Uygulaması</h1>
+    </header>
+    <main>
+        <div class="container">
+            <div class="delivery">
+                <h2>Teslimat Durumu</h2>
+                <p id="delivery-status">Beklemede</p>
+                <button id="confirm-delivery">Teslim Alındı</button>
+            </div>
+            <div class="qr-code">
+                <h2>QR Kodu Tara</h2>
+                <video id="qr-video" autoplay playsinline style="width: 100%;"></video>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Kurye Uygulaması</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@zxing/library@latest"></script>
+    <script>
+        const videoElem = document.getElementById('qr-video');
+        const deliveryStatusElem = document.getElementById('delivery-status');
+        const confirmDeliveryBtn = document.getElementById('confirm-delivery');
+
+        confirmDeliveryBtn.addEventListener('click', async () => {
+            const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+            const selectedAccount = accounts[0];
+
+            const deliveryContract = new ethers.Contract(
+                'AKILLI_SÖZLEŞME_ADRESİ', // Akıllı sözleşme adresini buraya girin
+                ['function confirmDelivery() public'],
+                ethers.provider.getSigner(selectedAccount)
+            );
+
+            try {
+                await deliveryContract.confirmDelivery();
+                deliveryStatusElem.textContent = "Teslim Edildi";
+            } catch (error) {
+                console.error('Bir hata oluştu:', error);
+            }
+        });
+
+        navigator.mediaDevices.getUserMedia({ video: { facingMode: { exact: "environment" } } })
+            .then(stream => {
+                videoElem.srcObject = stream;
+                const codeReader = new ZXing.BrowserQRCodeReader();
+                codeReader.decodeFromVideoElement(videoElem, (result, err) => {
+                    if (result) {
+                        deliveryStatusElem.textContent = "Teslim Edildi";
+                        confirmDeliveryBtn.click(); // Otomatik olarak teslimatı onayla
+                    }
+                    if (err && !(err instanceof ZXing.NotFoundException)) {
+                        console.error('Bir hata oluştu:', err);
+                    }
+                });
+            })
+            .catch(err => {
+                console.error('Kamera erişiminde hata:', err);
+            });
+    </script>
+</body>
+</html>
