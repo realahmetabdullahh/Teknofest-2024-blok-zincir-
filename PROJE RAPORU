@@ -1,0 +1,38 @@
+PROJE RAPORU
+1. Proje Özeti
+Bu proje, bir kurye uygulamasının geliştirilmesini hedeflemektedir. Kullanıcılar, paket teslimatlarını takip etmek ve onaylamak için bu uygulamayı kullanacaklardır. Projede, kullanıcıların paket teslimatlarını onaylamak için QR kodlarını tarayabilecekleri bir arayüz bulunmaktadır. Ayrıca, bir akıllı sözleşme kullanılarak teslimatların güvenli bir şekilde onaylanması sağlanmaktadır.
+2. Katma Değer ve Yenilikçilik
+Proje, mevcut kurye uygulamalarından farklı olarak kullanıcıların paket teslimatlarını onaylamak için QR kodlarını tarayabilme özelliği sunmaktadır. Bu, kullanıcıların daha hızlı ve güvenli bir şekilde teslimatlarını tamamlamalarını sağlar. Ayrıca, akıllı sözleşme teknolojisi kullanılarak teslimatların güvenli bir şekilde onaylanması sağlanmaktadır. Bu da kullanıcılar ve işletmeler için daha güvenilir bir teslimat süreci sunar. Projede kullanılan teknolojilerin uyumu ve entegrasyonu, projenin yenilikçi olmasını sağlamaktadır.
+3. Teknoloji Kullanımı
+Proje, ön uç geliştirmesinde HTML, CSS ve JavaScript kullanmaktadır. Kullanıcı arayüzü, modern tasarım prensipleriyle oluşturulmuş ve kullanıcıların kolayca erişebilmesi için mobil cihazlara duyarlıdır. Ayrıca, QR kodlarını tarayabilmek için kamera erişimini kullanmaktadır. Arka uç geliştirmesinde Solidity kullanılarak Ethereum blok zincirinde çalışan bir akıllı sözleşme oluşturulmuştur. Bu akıllı sözleşme, teslimatların güvenli bir şekilde onaylanmasını sağlamak için kullanılmaktadır. Projede ayrıca, ZXing kütüphanesi kullanılarak QR kodlarını tarayabilmek için bir işlevsellik sağlanmıştır.
+4. Uygulanabilirlik
+Proje, kullanıcılar için pratik bir çözüm sunmaktadır. Kullanıcılar, paket teslimatlarını hızlı ve güvenli bir şekilde onaylayabilirler. Ayrıca, işletmeler için de uygulanabilir bir çözüm sunmaktadır çünkü akıllı sözleşme teknolojisi, teslimatların güvenli bir şekilde onaylanmasını sağlar. Projede kullanılan teknolojilerin geniş bir kapsamı vardır ve bu da projenin uygulanabilirliğini artırır. Ancak, projenin daha geniş ölçekte uygulanabilirliği ve kullanılabilirliği için bazı geliştirmeler yapılabilir.
+5. Yaygın Etki
+Proje, teknolojik yenilikler sayesinde geniş bir kitleye hitap etme potansiyeline sahiptir. Kullanıcılar için paket teslimatlarını kolaylaştıran bir çözüm sunarken, işletmeler için de güvenilir bir teslimat süreci sağlar. Bu, toplumsal ve ekonomik açıdan olumlu bir etki yaratabilir. Ayrıca, akıllı sözleşme teknolojisi, güvenilir ve şeffaf işlem sağlar ve bu da endüstri düzeyinde olumlu bir etki yaratabilir.
+6. Sürdürülebilirlik
+Proje, finansal, çevresel ve sosyal sürdürülebilirlik ilkelerine uygun olarak planlanmıştır. Teknolojik çözümler ve akıllı sözleşme kullanımı, işlemlerin daha verimli ve şeffaf bir şekilde gerçekleştirilmesine olanak tanır. Bu, işletmelerin kaynaklarını daha verimli kullanmasını sağlayabilir. Ayrıca, çevresel sürdürülebilirlik açısından, daha az kağıt ve fiziksel belge kullanımıyla çevreye katkı sağlanabilir. Sosyal açıdan, kullanıcılar ve işletmeler arasındaki güvenin artması, daha sağlam bir toplumsal temel oluşturabilir.
+7. Proje Takvimi
+Projenin takvimi aşağıdaki gibi planlanmıştır:
+•	Hazırlık ve Tasarım Aşaması: 1 hafta
+•	Ön Uç Geliştirme: 2 hafta
+•	Arka Uç Geliştirme ve Akıllı Sözleşme Entegrasyonu: 1 hafta
+•	Test ve Doğrulama: 1 hafta 
+8. Takım Yapısı
+Proje ekibi aşağıdaki üyelerden oluşmaktadır:
+1.	Ahmad Abdullah (Proje Yöneticisi, Geliştirici) - Nişantaşı Üniversitesi yazılım mühendisliği
+
+9. Kaynakça
+Dijital/Web Kaynaklar:
+•	ZXing kütüphanesi. [Online]. Erişim Tarihi: 2024. https://github.com/zxing/zxing
+Akademik Kaynaklar:
+•	Solidity Derleyici. [Online]. Erişim Tarihi: 2024. https://docs.soliditylang.org/en/latest/
+•	Ethereum Geliştirici Dokümantasyonu. [Online]. Erişim Tarihi: 2024. https://ethereum.org/en/developers/docs/
+________________________________________
+
+
+
+
+
+
+
+
