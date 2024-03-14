@@ -1,0 +1,21 @@
+// SPDX-License-Identifier: MIT
+
+pragma solidity ^0.8.0;
+
+contract DeliveryContract {
+    enum DeliveryStatus { Pending, Delivered }
+
+    DeliveryStatus public deliveryStatus;
+
+    event DeliveryConfirmed();
+
+    constructor() {
+        deliveryStatus = DeliveryStatus.Pending;
+    }
+
+    function confirmDelivery() public {
+        require(deliveryStatus == DeliveryStatus.Pending, "Delivery already confirmed");
+        deliveryStatus = DeliveryStatus.Delivered;
+        emit DeliveryConfirmed();
+    }
+}
